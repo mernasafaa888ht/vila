@@ -1,0 +1,93 @@
+header{
+   height: 50vh;
+   background-position: center top;
+    background-image: url(../images/hero_bg_3.jpg);
+
+    background-repeat: none;
+    background-size: cover;
+}
+header .container-fluid {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ضبط الكلاس .par لضمان توسيط الكلام تماماً في النص */
+.par {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* يبدأ من أسفل قليلاً وبدون شفافية */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* يستقر في مكانه الطبيعي وواضح بالكامل */
+    }
+}
+
+/* تطبيق الأنيميشن على حاوية العناوين أو النص داخل الهيدر */
+header .par div {
+    animation: fadeInSlide 1.2s ease-out forwards;
+}
+
+/* إذا كنتِ تريدين أن تظهر الـ h2 لوحدها والـ p تحتها بتأثير متتابع قليلاً */
+header .par h2 {
+    animation: fadeInSlide 1s ease-out forwards;
+}
+
+header .par p {
+    animation: fadeInSlide 1.4s ease-out forwards;
+    opacity: 0; /* يبدأ مخفياً حتى ينتهي وقت التأخير الخاص به */
+    animation-fill-mode: forwards;
+}
+.tgree {
+    background-color: rgba(1, 76, 80, 0.99);
+   
+}
+/* form input{
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 5%;
+    
+    border-color:rgb(213, 206, 206);
+    
+}
+.num{
+    height: 75%;
+} */
+
+form input, form textarea {
+    border: 1px solid #d1d5db !important; /* لون رمادي هادي وناعم للإطار */
+    border-radius: 10px;
+    outline: none;
+    padding: 12px 15px; /* مساحات داخلية عشان الكلام يبعد عن الحواف ومايتقطعش من فوق */
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* حل مشكلة تداخل الحدود أو القطع عند التركيز (Focus) */
+form input:focus, form textarea:focus {
+    border-color: #014c50 !important; /* لون هادي متناسق مع "tgree" عند الضغط */
+    box-shadow: 0 0 0 3px rgba(1, 76, 80, 0.1);
+}
+
+/* تنسيق خاص لحقل الـ number أو textarea الكبير لتجنب أي مشاكل في الارتفاع */
+.num {
+margin-top:10px;
+
+    height: 120px !important; /* تحديد ارتفاع مناسب بدلاً من النسبة المئوية اللي كانت عاملة المشكلة */
+    resize: none;
+}
